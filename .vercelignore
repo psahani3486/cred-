@@ -1,0 +1,15 @@
+# Ignore Python dependencies and backend analysis files so Vercel builds instantly as a pure static site
+requirements.txt
+src/
+notebooks/
+scratch/
+tests/
+golden/
+data/
+dataset/
+sql/
+architecture/
+reports/
+*.py
+*.csv
+.pytest_cache/
