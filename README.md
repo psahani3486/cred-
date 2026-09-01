@@ -1,24 +1,21 @@
 # CredResolve Collections Investigation & Capital Allocation Strategy
 
-An end-to-end collections analytics investigation reconstructing trustworthy business performance from 17 raw, uncleaned telemetry datasets, independently testing the executive claim *"Recovery has improved by 11% month-on-month"*, establishing a production analytical layer, and formulating a data-driven ₹10 Cr capital deployment strategy.
+An end-to-end collections analytics investigation reconstructing trustworthy business performance from 17 raw telemetry datasets, independently testing the executive claim *"Recovery has improved by 11% month-on-month"*, establishing a production analytical layer, and formulating a data-driven ₹10 Cr capital deployment strategy.
 
 ---
 
-## 📌 Submission Deliverables Checklist
+## 🚀 Required Project Deliverables & Submission Links
 
-| Deliverable | Description | File Path / Link |
-| :--- | :--- | :--- |
-| **1. Git Repository** | Complete structured codebase, tests, data pipeline, and portfolio documentation | [`https://github.com/psahani3486/cred-`](https://github.com/psahani3486/cred-) |
-| **2. Analysis Notebook** | Fully executable 20-section analysis notebook with code and outputs | [`notebooks/collections_analysis.ipynb`](https://github.com/psahani3486/cred-/blob/main/notebooks/collections_analysis.ipynb) |
-| **3. SQL Repository** | 17 production SQL scripts covering profiling, cleaning, metrics & DiD | [`sql/`](https://github.com/psahani3486/cred-/tree/main/sql) |
-| **4. Executive Dashboard** | Single-page interactive CEO dashboard with dark-mode glassmorphism aesthetics | [`dashboard/index.html`](https://github.com/psahani3486/cred-/blob/main/dashboard/index.html) |
-| **5. Golden Dataset & Pipeline** | Reproducible python analytics pipeline & exported golden CSV datasets | [`src/pipeline_runner.py`](https://github.com/psahani3486/cred-/blob/main/src/pipeline_runner.py) & [`data/golden/`](https://github.com/psahani3486/cred-/tree/main/data/golden) |
-| **6. Executive Memo** | 2-page C-suite memo outlining findings, counterfactuals & ROI | [`reports/EXECUTIVE_MEMO.md`](https://github.com/psahani3486/cred-/blob/main/reports/EXECUTIVE_MEMO.md) & [`FINAL_FINDINGS.md`](https://github.com/psahani3486/cred-/blob/main/FINAL_FINDINGS.md) |
-| **7. Architecture Diagram** | Production analytics pipeline architecture diagram & specification | [`architecture/architecture.png`](https://github.com/psahani3486/cred-/blob/main/architecture/architecture.png) & [`architecture/ARCHITECTURE.md`](https://github.com/psahani3486/cred-/blob/main/architecture/ARCHITECTURE.md) |
+- **Notebook**: [`notebooks/collections_analysis.ipynb`](https://github.com/psahani3486/cred-/blob/main/notebooks/collections_analysis.ipynb) — Executable 20-section analysis notebook with code and outputs
+- **SQL**: [`sql/`](https://github.com/psahani3486/cred-/tree/main/sql) — 17 production-grade SQL scripts (`01_data_profiling.sql` to `17_data_quality.sql`)
+- **Dashboard**: [`dashboard/index.html`](https://github.com/psahani3486/cred-/blob/main/dashboard/index.html) — Interactive single-page CEO executive dashboard
+- **Golden dataset/pipeline**: [`src/pipeline_runner.py`](https://github.com/psahani3486/cred-/blob/main/src/pipeline_runner.py) & [`data/golden/`](https://github.com/psahani3486/cred-/tree/main/data/golden) — Reproducible data pipeline & exported golden analytical tables
+- **Executive memo**: [`reports/EXECUTIVE_MEMO.md`](https://github.com/psahani3486/cred-/blob/main/reports/EXECUTIVE_MEMO.md) & [`FINAL_FINDINGS.md`](https://github.com/psahani3486/cred-/blob/main/FINAL_FINDINGS.md) — 2-page C-suite memo and final executive findings
+- **Architecture diagram**: [`architecture/architecture.png`](https://github.com/psahani3486/cred-/blob/main/architecture/architecture.png) & [`architecture/ARCHITECTURE.md`](https://github.com/psahani3486/cred-/blob/main/architecture/ARCHITECTURE.md) — Production analytics architecture diagram and specification
 
 ---
 
-## 🔍 Key Investigation Findings & Summary
+## 🔍 Key Investigation Findings & Executive Summary
 
 ### 1. Is the 11% Month-on-Month Improvement Claim Real?
 > **VERDICT: FALSE / OPERATIONALLY MISLEADING**
@@ -69,6 +66,31 @@ collections-analytics/
 ├── FINAL_FINDINGS.md                   # Executive findings structured per Section 39 schema
 ├── data_inventory.csv                  # Dataset row counts, column counts & PK/FK summary
 ├── requirements.txt                    # Python environment dependencies
+│
+├── dataset/                            # Cleanly organized raw CSV dataset directory
+│   ├── account_status_history.csv
+│   ├── accounts.csv
+│   ├── agent_sessions.csv
+│   ├── agents.csv
+│   ├── borrowers.csv
+│   ├── call_attempts.csv
+│   ├── call_dispositions.csv
+│   ├── calls.csv
+│   ├── campaigns.csv
+│   ├── complaints.csv
+│   ├── daily_targeting.csv
+│   ├── data_dictionary.csv
+│   ├── data_inventory.csv
+│   ├── field_visits.csv
+│   ├── payments.csv
+│   ├── promises_to_pay.csv
+│   ├── sms_events.csv
+│   ├── vendor_telephony.csv
+│   └── whatsapp_events.csv
+│
+├── data/
+│   ├── staging/                        # Cleaned IST transaction data
+│   └── golden/                         # Exported Golden analytical tables
 │
 ├── src/                                # Production Python Analytics Package
 │   ├── __init__.py
