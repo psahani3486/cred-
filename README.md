@@ -4,14 +4,15 @@ An end-to-end collections analytics investigation reconstructing trustworthy bus
 
 ---
 
-## 🚀 Required Project Deliverables & Submission Links
+## 📌 Submit:
 
-- **Notebook**: [`notebooks/collections_analysis.ipynb`](https://github.com/psahani3486/cred-/blob/main/notebooks/collections_analysis.ipynb) — Executable 20-section analysis notebook with code and outputs
-- **SQL**: [`sql/`](https://github.com/psahani3486/cred-/tree/main/sql) — 17 production-grade SQL scripts (`01_data_profiling.sql` to `17_data_quality.sql`)
-- **Dashboard**: [`dashboard/index.html`](https://github.com/psahani3486/cred-/blob/main/dashboard/index.html) — Interactive single-page CEO executive dashboard
-- **Golden dataset/pipeline**: [`src/pipeline_runner.py`](https://github.com/psahani3486/cred-/blob/main/src/pipeline_runner.py) & [`data/golden/`](https://github.com/psahani3486/cred-/tree/main/data/golden) — Reproducible data pipeline & exported golden analytical tables
-- **Executive memo**: [`reports/EXECUTIVE_MEMO.md`](https://github.com/psahani3486/cred-/blob/main/reports/EXECUTIVE_MEMO.md) & [`FINAL_FINDINGS.md`](https://github.com/psahani3486/cred-/blob/main/FINAL_FINDINGS.md) — 2-page C-suite memo and final executive findings
-- **Architecture diagram**: [`architecture/architecture.png`](https://github.com/psahani3486/cred-/blob/main/architecture/architecture.png) & [`architecture/ARCHITECTURE.md`](https://github.com/psahani3486/cred-/blob/main/architecture/ARCHITECTURE.md) — Production analytics architecture diagram and specification
+* ● **Git repository**: [`https://github.com/psahani3486/cred-`](https://github.com/psahani3486/cred-) — Complete structured codebase, tests, data pipeline, and portfolio documentation
+* ● **Notebook**: [`notebooks/collections_analysis.ipynb`](https://github.com/psahani3486/cred-/blob/main/notebooks/collections_analysis.ipynb) — Executable 20-section analysis notebook with code and outputs
+* ● **SQL**: [`sql/`](https://github.com/psahani3486/cred-/tree/main/sql) — 17 production-grade SQL scripts (`01_data_profiling.sql` to `17_data_quality.sql`)
+* ● **Dashboard**: [`dashboard/index.html`](https://github.com/psahani3486/cred-/blob/main/dashboard/index.html) — Interactive single-page CEO executive dashboard
+* ● **Golden dataset/pipeline**: [`src/pipeline_runner.py`](https://github.com/psahani3486/cred-/blob/main/src/pipeline_runner.py) & [`data/golden/`](https://github.com/psahani3486/cred-/tree/main/data/golden) — Reproducible data pipeline & exported golden analytical tables
+* ● **Executive memo**: [`reports/EXECUTIVE_MEMO.md`](https://github.com/psahani3486/cred-/blob/main/reports/EXECUTIVE_MEMO.md) & [`FINAL_FINDINGS.md`](https://github.com/psahani3486/cred-/blob/main/FINAL_FINDINGS.md) — 2-page C-suite memo and final executive findings
+* ● **Architecture diagram**: [`architecture/architecture.png`](https://github.com/psahani3486/cred-/blob/main/architecture/architecture.png) & [`architecture/ARCHITECTURE.md`](https://github.com/psahani3486/cred-/blob/main/architecture/ARCHITECTURE.md) — Production analytics architecture diagram and specification
 
 ---
 
