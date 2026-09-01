@@ -1,11 +1,5 @@
 # CredResolve Collections Investigation & Capital Allocation Strategy
 
-An end-to-end collections analytics investigation reconstructing trustworthy business performance from 17 raw telemetry datasets, independently testing the executive claim *"Recovery has improved by 11% month-on-month"*, establishing a production analytical layer, and formulating a data-driven ₹10 Cr capital deployment strategy.
-
----
-
-## 📌 Submit:
-
 * ● **Git repository**: [`https://github.com/psahani3486/cred-`](https://github.com/psahani3486/cred-) — Complete structured codebase, tests, data pipeline, and portfolio documentation
 * ● **Notebook**: [`notebooks/collections_analysis.ipynb`](https://github.com/psahani3486/cred-/blob/main/notebooks/collections_analysis.ipynb) — Executable 20-section analysis notebook with code and outputs
 * ● **SQL**: [`sql/`](https://github.com/psahani3486/cred-/tree/main/sql) — 17 production-grade SQL scripts (`01_data_profiling.sql` to `17_data_quality.sql`)
@@ -147,26 +141,6 @@ Evaluated 6 strategic investment options across 3 scenarios (Base, Downside, Ups
 - **Batch Processing Runtime**: **< 15 seconds** for complete 17-table pipeline execution.
 - **Automated Test Coverage**: **10/10 Unit Tests Passing** (`pytest`).
 - **Data Freshness Guarantee**: Daily batch SLA ready by 06:00 AM IST.
-
----
-
-## 7. Codebase & Test Verification Results (`tests/`)
-
-### 7.1 Automated Unit Test Execution Log
-```text
-============================= test session starts =============================
-platform win32 -- Python 3.13.5, pytest-8.3.4, pluggy-1.5.0
-rootdir: C:\Users\Pankaj\Downloads\New folder (9)
-collected 10 items
-
-tests\test_analysis.py ..                                                [ 20%]
-tests\test_data_quality.py ...                                           [ 50%]
-tests\test_entity_resolution.py ..                                       [ 70%]
-tests\test_metrics.py .                                                  [ 80%]
-tests\test_payments.py ..                                                [100%]
-
-============================= 10 passed in 3.37s ==============================
-```
 
 ---
 
