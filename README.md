@@ -4,12 +4,12 @@ An end-to-end collections analytics investigation reconstructing trustworthy bus
 
 ---
 
-## 📌 Deliverables & Submission Links
+## 📌 Submit:
 
 * ● **Git repository**: [`https://github.com/psahani3486/cred-`](https://github.com/psahani3486/cred-) — Complete structured codebase, tests, data pipeline, and portfolio documentation
 * ● **Notebook**: [`notebooks/collections_analysis.ipynb`](https://github.com/psahani3486/cred-/blob/main/notebooks/collections_analysis.ipynb) — Executable 20-section analysis notebook with code and outputs
 * ● **SQL**: [`sql/`](https://github.com/psahani3486/cred-/tree/main/sql) — 17 production-grade SQL scripts (`01_data_profiling.sql` to `17_data_quality.sql`)
-* ● **Dashboard**: [`dashboard/index.html`](https://github.com/psahani3486/cred-/blob/main/dashboard/index.html) — Interactive single-page CEO executive dashboard
+* ● **Dashboard**: [`dashboard/index.html`](https://github.com/psahani3486/cred-/blob/main/dashboard/index.html) — **[Live Vercel Link: https://temporary-rapid-indigo-o6wm9tm.vercel.app](https://temporary-rapid-indigo-o6wm9tm.vercel.app)** (Interactive single-page CEO executive dashboard)
 * ● **Golden dataset/pipeline**: [`src/pipeline_runner.py`](https://github.com/psahani3486/cred-/blob/main/src/pipeline_runner.py) & [`data/golden/`](https://github.com/psahani3486/cred-/tree/main/data/golden) — Reproducible data pipeline & exported golden analytical tables
 * ● **Executive memo**: [`reports/EXECUTIVE_MEMO.md`](https://github.com/psahani3486/cred-/blob/main/reports/EXECUTIVE_MEMO.md) & [`FINAL_FINDINGS.md`](https://github.com/psahani3486/cred-/blob/main/FINAL_FINDINGS.md) — 2-page C-suite memo and final executive findings
 * ● **Architecture diagram**: [`architecture/architecture.png`](https://github.com/psahani3486/cred-/blob/main/architecture/architecture.png) & [`architecture/ARCHITECTURE.md`](https://github.com/psahani3486/cred-/blob/main/architecture/ARCHITECTURE.md) — Production analytics architecture diagram and specification
@@ -96,6 +96,7 @@ Evaluated 6 strategic investment options across 3 scenarios (Base, Downside, Ups
 ## 4. Production Dashboard Results (`dashboard/index.html`)
 
 ### 4.1 CEO Executive KPI Summary Metrics
+- **Live Vercel Dashboard URL**: **[`https://temporary-rapid-indigo-o6wm9tm.vercel.app`](https://temporary-rapid-indigo-o6wm9tm.vercel.app)**
 - **Golden Settled Recovery**: **₹114.99 Cr** (across 13,202 valid payment transactions)
 - **Contact Rate**: **68.4%** (62,480 successful contacts out of 91,350 call attempts)
 - **Right Party Contact (RPC) Rate**: **34.2%** (31,240 RPCs out of total calls)
@@ -182,4 +183,4 @@ python -m src.pipeline_runner
 ```
 
 ### 3. View Executive CEO Dashboard
-Open [`dashboard/index.html`](https://github.com/psahani3486/cred-/blob/main/dashboard/index.html) directly in any modern web browser.
+Open [`dashboard/index.html`](https://temporary-rapid-indigo-o6wm9tm.vercel.app) directly in any browser or visit **[`https://temporary-rapid-indigo-o6wm9tm.vercel.app`](https://temporary-rapid-indigo-o6wm9tm.vercel.app)**.
