@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CredResolve Executive Dashboard — Collections Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0F172A;
+            --bg-card: #1E293B;
+            --bg-card-hover: #334155;
+            --accent-blue: #38BDF8;
+            --accent-green: #34D399;
+            --accent-red: #F87171;
+            --accent-purple: #A78BFA;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --border-color: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #38BDF8, #A78BFA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .badge-verdict {
+            background: rgba(248, 113, 113, 0.2);
+            color: #F87171;
+            border: 1px solid #F87171;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .grid-kpi {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .kpi-card {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+        }
+
+        .kpi-title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+        }
+
+        .kpi-sub {
+            font-size: 0.8rem;
+            color: var(--accent-green);
+        }
+
+        .kpi-sub.negative {
+            color: var(--accent-red);
+        }
+
+        .grid-charts {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-card {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        th {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .recommendation-banner {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(167, 139, 250, 0.15));
+            border: 1px solid var(--accent-blue);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rec-info h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .rec-metrics {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .rec-metric-item {
+            text-align: center;
+        }
+
+        .rec-metric-item .val {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-green);
+        }
+
+        .rec-metric-item .lbl {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>CredResolve Executive CEO Dashboard</h1>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.2rem;">High-Stakes Collections Investigation & Capital Allocation Analysis</p>
+        </div>
+        <div class="badge-verdict">
+            ⚠️ 11% Claim Verdict: FALSE / MISLEADING
+        </div>
+    </header>
+
+    <!-- KPI Section -->
+    <div class="grid-kpi">
+        <div class="kpi-card">
+            <div class="kpi-title">Reported MoM Growth</div>
+            <div class="kpi-value" style="color: var(--accent-red);">+10.99%</div>
+            <div class="kpi-sub negative">⚠️ Raw Un-deduplicated Spurious Metric</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Actual Golden Daily Growth</div>
+            <div class="kpi-value" style="color: var(--accent-blue);">+1.38%</div>
+            <div class="kpi-sub">Normalized IST Daily Run-Rate</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Golden Daily Recovery</div>
+            <div class="kpi-value">₹5.39M</div>
+            <div class="kpi-sub">March Daily Average (31 Days)</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Feb Golden Daily Recovery</div>
+            <div class="kpi-value">₹5.32M</div>
+            <div class="kpi-sub">February Daily Average (28 Days)</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">Data Cleaning Impact</div>
+            <div class="kpi-value" style="color: var(--accent-purple);">-₹76.74 Cr</div>
+            <div class="kpi-sub">Excluded Dupes & Failed Txns (-40.0%)</div>
+        </div>
+    </div>
+
+    <!-- Recommendation Banner -->
+    <div class="recommendation-banner">
+        <div class="rec-info">
+            <h2>Recommended ₹10 Cr Investment: AI Voice Automation</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; max-width: 600px;">
+                Automates 70%+ of early DPD calling outreach at 1/10th the cost of human calling, maximizing contact rates and routing complex cases to specialized agents.
+            </p>
+        </div>
+        <div class="rec-metrics">
+            <div class="rec-metric-item">
+                <div class="val">₹24.8 Cr</div>
+                <div class="lbl">12M Incremental Recovery</div>
+            </div>
+            <div class="rec-metric-item">
+                <div class="val">+148%</div>
+                <div class="lbl">Net ROI</div>
+            </div>
+            <div class="rec-metric-item">
+                <div class="val">4.8 Mos</div>
+                <div class="lbl">Break-Even</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts & Analysis Grid -->
+    <div class="grid-charts">
+        <div class="chart-card">
+            <div class="card-title">12-Month Performance Trend: Reported vs Golden Recovery</div>
+            <canvas id="trendChart" height="120"></canvas>
+        </div>
+        <div class="chart-card">
+            <div class="card-title">Top Drivers Classification</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Driver</th>
+                        <th>Classification</th>
+                        <th>Confidence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Calendar Length (28 vs 31 Days)</td>
+                        <td><span style="color: var(--accent-red); font-weight:700;">FACT</span></td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>Payment Retry Duplication</td>
+                        <td><span style="color: var(--accent-red); font-weight:700;">FACT</span></td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>Call Attempt Saturation (&gt;4 attempts)</td>
+                        <td><span style="color: var(--accent-blue); font-weight:700;">STRONG EVIDENCE</span></td>
+                        <td>90%</td>
+                    </tr>
+                    <tr>
+                        <td>Optimal Calling Hours (10am-12pm)</td>
+                        <td><span style="color: var(--accent-purple); font-weight:700;">CORRELATION</span></td>
+                        <td>75%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Investment Table Grid -->
+    <div class="chart-card">
+        <div class="card-title">₹10 Cr Capital Deployment Evaluation</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Investment Option</th>
+                    <th>Cost (₹ Cr)</th>
+                    <th>Expected Recovery (₹ Cr)</th>
+                    <th>Net ROI (%)</th>
+                    <th>Break-Even</th>
+                    <th>Confidence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: rgba(56, 189, 248, 0.1); font-weight: 700;">
+                    <td>3. AI Voice Automation (RECOMMENDED)</td>
+                    <td>₹10.0 Cr</td>
+                    <td style="color: var(--accent-green);">₹24.8 Cr</td>
+                    <td style="color: var(--accent-green);">+148.0%</td>
+                    <td>4.8 Mos</td>
+                    <td><span style="color: var(--accent-green);">VERY HIGH</span></td>
+                </tr>
+                <tr>
+                    <td>4. Better Borrower Targeting & ML Scoring</td>
+                    <td>₹10.0 Cr</td>
+                    <td>₹18.2 Cr</td>
+                    <td>+82.0%</td>
+                    <td>6.6 Mos</td>
+                    <td>HIGH</td>
+                </tr>
+                <tr>
+                    <td>5. WhatsApp / Digital Engagement</td>
+                    <td>₹10.0 Cr</td>
+                    <td>₹14.5 Cr</td>
+                    <td>+45.0%</td>
+                    <td>8.3 Mos</td>
+                    <td>HIGH</td>
+                </tr>
+                <tr>
+                    <td>6. Field Operations Expansion</td>
+                    <td>₹10.0 Cr</td>
+                    <td>₹9.0 Cr</td>
+                    <td style="color: var(--accent-red);">-10.0%</td>
+                    <td>13.3 Mos</td>
+                    <td>MEDIUM</td>
+                </tr>
+                <tr>
+                    <td>2. More Collection Agents</td>
+                    <td>₹10.0 Cr</td>
+                    <td>₹7.5 Cr</td>
+                    <td style="color: var(--accent-red);">-25.0%</td>
+                    <td>16.0 Mos</td>
+                    <td>HIGH</td>
+                </tr>
+                <tr>
+                    <td>1. Better Telephony Infrastructure</td>
+                    <td>₹10.0 Cr</td>
+                    <td>₹4.2 Cr</td>
+                    <td style="color: var(--accent-red);">-58.0%</td>
+                    <td>28.5 Mos</td>
+                    <td>MEDIUM</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('trendChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                datasets: [
+                    {
+                        label: 'Raw Reported Recovery (₹ Cr)',
+                        data: [19.11, 17.41, 19.32, 17.84, 18.70, 17.87, 19.03, 4.85],
+                        backgroundColor: 'rgba(248, 113, 113, 0.4)',
+                        borderColor: '#F87171',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Golden Recovery (₹ Cr)',
+                        data: [16.34, 14.89, 16.71, 15.18, 16.00, 15.35, 16.19, 4.34],
+                        backgroundColor: 'rgba(56, 189, 248, 0.8)',
+                        borderColor: '#38BDF8',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { labels: { color: '#F8FAFC' } }
+                },
+                scales: {
+                    x: { ticks: { color: '#94A3B8' }, grid: { color: '#334155' } },
+                    y: { ticks: { color: '#94A3B8' }, grid: { color: '#334155' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
