@@ -8,13 +8,13 @@ An end-to-end collections analytics investigation reconstructing trustworthy bus
 
 | Deliverable | Description | File Path / Link |
 | :--- | :--- | :--- |
-| **1. Git Repository** | Complete structured codebase, tests, data pipeline, and documentation | [`./`](file:///c:/Users/Pankaj/Downloads/New%20folder%20%289%29/README.md) |
-| **2. Analysis Notebook** | Fully executable 20-section analysis notebook with code and outputs | [`notebooks/collections_analysis.ipynb`](file:///c:/Users/Pankaj/Downloads/New%20folder%20%289%29/notebooks/collections_analysis.ipynb) |
-| **3. SQL Repository** | 17 production SQL scripts covering profiling, cleaning, metrics & DiD | [`sql/`](file:///c:/Users/Pankaj/Downloads/New%20folder%20%289%29/sql/) |
-| **4. Executive Dashboard** | Single-page interactive CEO dashboard with dark-mode glassmorphism aesthetics | [`dashboard/index.html`](file:///c:/Users/Pankaj/Downloads/New%20folder%20%289%29/dashboard/index.html) |
-| **5. Golden Dataset & Pipeline** | Reproducible python analytics pipeline & exported golden CSV datasets | [`src/pipeline_runner.py`](file:///c:/Users/Pankaj/Downloads/New%20folder%20%289%29/src/pipeline_runner.py) & [`data/golden/`](file:///c:/Users/Pankaj/Downloads/New%20folder%20%289%29/data/golden/) |
-| **6. Executive Memo** | 2-page C-suite memo outlining findings, counterfactuals & ROI | [`reports/EXECUTIVE_MEMO.md`](file:///c:/Users/Pankaj/Downloads/New%20folder%20%289%29/reports/EXECUTIVE_MEMO.md) & [`FINAL_FINDINGS.md`](file:///c:/Users/Pankaj/Downloads/New%20folder%20%289%29/FINAL_FINDINGS.md) |
-| **7. Architecture Diagram** | Production analytics pipeline architecture diagram & specification | [`architecture/architecture.png`](file:///c:/Users/Pankaj/Downloads/New%20folder%20%289%29/architecture/architecture.png) & [`architecture/ARCHITECTURE.md`](file:///c:/Users/Pankaj/Downloads/New%20folder%20%289%29/architecture/ARCHITECTURE.md) |
+| **1. Git Repository** | Complete structured codebase, tests, data pipeline, and portfolio documentation | [`https://github.com/psahani3486/cred-`](https://github.com/psahani3486/cred-) |
+| **2. Analysis Notebook** | Fully executable 20-section analysis notebook with code and outputs | [`notebooks/collections_analysis.ipynb`](https://github.com/psahani3486/cred-/blob/main/notebooks/collections_analysis.ipynb) |
+| **3. SQL Repository** | 17 production SQL scripts covering profiling, cleaning, metrics & DiD | [`sql/`](https://github.com/psahani3486/cred-/tree/main/sql) |
+| **4. Executive Dashboard** | Single-page interactive CEO dashboard with dark-mode glassmorphism aesthetics | [`dashboard/index.html`](https://github.com/psahani3486/cred-/blob/main/dashboard/index.html) |
+| **5. Golden Dataset & Pipeline** | Reproducible python analytics pipeline & exported golden CSV datasets | [`src/pipeline_runner.py`](https://github.com/psahani3486/cred-/blob/main/src/pipeline_runner.py) & [`data/golden/`](https://github.com/psahani3486/cred-/tree/main/data/golden) |
+| **6. Executive Memo** | 2-page C-suite memo outlining findings, counterfactuals & ROI | [`reports/EXECUTIVE_MEMO.md`](https://github.com/psahani3486/cred-/blob/main/reports/EXECUTIVE_MEMO.md) & [`FINAL_FINDINGS.md`](https://github.com/psahani3486/cred-/blob/main/FINAL_FINDINGS.md) |
+| **7. Architecture Diagram** | Production analytics pipeline architecture diagram & specification | [`architecture/architecture.png`](https://github.com/psahani3486/cred-/blob/main/architecture/architecture.png) & [`architecture/ARCHITECTURE.md`](https://github.com/psahani3486/cred-/blob/main/architecture/ARCHITECTURE.md) |
 
 ---
 
@@ -143,4 +143,4 @@ python -m src.pipeline_runner
 *Exports all golden data tables to `data/golden/`.*
 
 ### 3. View Executive CEO Dashboard
-Open [`dashboard/index.html`](file:///c:/Users/Pankaj/Downloads/New%20folder%20%289%29/dashboard/index.html) directly in any modern web browser.
+Open [`dashboard/index.html`](https://github.com/psahani3486/cred-/blob/main/dashboard/index.html) directly in any modern web browser.
