@@ -1,0 +1,2 @@
+treatment_pre_avg,treatment_post_avg,control_pre_avg,control_post_avg,did_estimate_per_account,p_value,statistically_significant,conclusion
+41300.26,53833.51,39555.38,55224.71,-3136.08,0.184,False,Targeting strategy change did NOT produce a statistically significant incremental uplift.

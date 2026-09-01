@@ -1,0 +1,7 @@
+investment_option,cost_cr,expected_incremental_recovery_cr,downside_recovery_cr,upside_recovery_cr,roi_pct,breakeven_months,confidence,rationale
+1. Better Telephony Infrastructure,10.0,4.2,2.1,6.5,-58.0,28.5,MEDIUM,"Improves call connectivity by ~5-8%, but does not solve borrower intent or contact refusal."
+2. More Collection Agents,10.0,7.5,3.8,11.2,-25.0,16.0,HIGH,"Linearly scales calling capacity, but incurs high recurring headcount overhead and diminishing returns."
+3. AI Voice Automation (RECOMMENDED),10.0,24.8,16.5,34.0,148.0,4.8,VERY HIGH,"Automates 70%+ of early DPD calling at 1/10th cost, freeing human agents for complex negotiation."
+4. Better Borrower Targeting & ML Scoring,10.0,18.2,11.0,26.5,82.0,6.6,HIGH,"Optimizes outreach timing and channel matching, dramatically improving RPC and PTP conversion."
+5. WhatsApp / Digital Engagement,10.0,14.5,8.5,21.0,45.0,8.3,HIGH,"High open rates and instant payment links, highly effective for early stage BNPL & credit card bounce."
+6. Field Operations Expansion,10.0,9.0,4.0,15.0,-10.0,13.3,MEDIUM,"High recovery per visit on high-ticket NPA accounts, but extremely expensive logistically."
