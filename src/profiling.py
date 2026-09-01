@@ -3,7 +3,9 @@ import glob
 import pandas as pd
 import numpy as np
 
-def generate_inventory(data_dir='.'):
+def generate_inventory(data_dir='dataset'):
+    if not os.path.exists(data_dir):
+        data_dir = '.'
     csv_files = glob.glob(os.path.join(data_dir, '*.csv'))
     inventory = []
     
@@ -47,6 +49,7 @@ def generate_inventory(data_dir='.'):
         
     inv_df = pd.DataFrame(inventory)
     inv_df.to_csv('data_inventory.csv', index=False)
+    inv_df.to_csv(os.path.join(data_dir, 'data_inventory.csv'), index=False)
     print("Generated data_inventory.csv successfully.")
     return inv_df
 

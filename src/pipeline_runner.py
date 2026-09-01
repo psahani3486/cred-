@@ -9,6 +9,12 @@ from src.metrics import compute_monthly_metrics
 from src.analysis import perform_mix_adjustment, perform_counterfactual_did, detect_simpsons_paradox, run_did_statistical_model
 from src.investment import evaluate_investments
 
+def load_table(name, data_dir='dataset'):
+    path = os.path.join(data_dir, f"{name}.csv")
+    if not os.path.exists(path):
+        path = f"{name}.csv"
+    return pd.read_csv(path)
+
 def run_full_pipeline():
     print("=== EXECUTING COMPLETE PRODUCTION ANALYTICS PIPELINE ===")
     
@@ -16,22 +22,24 @@ def run_full_pipeline():
     os.makedirs('data/staging', exist_ok=True)
     os.makedirs('data/golden', exist_ok=True)
     
+    data_dir = 'dataset' if os.path.exists('dataset') else '.'
+    
     # 1. Profile datasets
     print("[1/8] Generating dataset inventory...")
-    inv_df = generate_inventory('.')
+    inv_df = generate_inventory(data_dir)
     
     # 2. Load tables
-    print("[2/8] Reading raw CSV telemetry files...")
-    pay = pd.read_csv('payments.csv')
-    acc = pd.read_csv('accounts.csv')
-    agents = pd.read_csv('agents.csv')
-    calls = pd.read_csv('calls.csv')
-    disps = pd.read_csv('call_dispositions.csv')
-    targ = pd.read_csv('daily_targeting.csv')
-    sessions = pd.read_csv('agent_sessions.csv')
-    wa = pd.read_csv('whatsapp_events.csv')
-    sms = pd.read_csv('sms_events.csv')
-    field = pd.read_csv('field_visits.csv')
+    print(f"[2/8] Reading raw CSV telemetry files from '{data_dir}'...")
+    pay = load_table('payments', data_dir)
+    acc = load_table('accounts', data_dir)
+    agents = load_table('agents', data_dir)
+    calls = load_table('calls', data_dir)
+    disps = load_table('call_dispositions', data_dir)
+    targ = load_table('daily_targeting', data_dir)
+    sessions = load_table('agent_sessions', data_dir)
+    wa = load_table('whatsapp_events', data_dir)
+    sms = load_table('sms_events', data_dir)
+    field = load_table('field_visits', data_dir)
     
     # 3. Entity Resolution
     print("[3/8] Resolving agent employee codes to canonical IDs...")
